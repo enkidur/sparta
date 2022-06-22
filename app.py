@@ -29,7 +29,7 @@ def bucket_post():
 def bucket_done():
     num_receive = request.form["num_give"]
     done_receive = request.form["done_give"]
-
+ 
     db.bucket.update_one({'num': int(num_receive)}, {'$set': {'done': int(done_receive)}})
     return jsonify({'msg': '수정 완료!'})
 
